@@ -1,0 +1,7 @@
+{
+  "name": "form-autocomplete",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
