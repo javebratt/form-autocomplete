@@ -12,7 +12,7 @@ export class HomePage {
     this.addContact = formBuilder.group({
       name: ['', Validators.required],
       lastName: ['', Validators.required],
-      email: ['', Validators.required],
+      email: ['', Validators.compose([Validators.required, Validators.email])],
       phone: ['', Validators.required],
     });
   }

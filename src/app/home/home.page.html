@@ -10,7 +10,12 @@
   <form [formGroup]="addContact" (submit)="addSong()" novalidate>
     <ion-item fill="outline" class="ion-no-padding">
       <ion-label position="floating">First Name:</ion-label>
-      <ion-input formControlName="name" type="text" autocomplete="name">
+      <ion-input
+        placeholder="Enter your first name"
+        formControlName="name"
+        type="text"
+        autocomplete="given-name"
+      >
       </ion-input>
       <ion-note slot="helper">Please enter your first name</ion-note>
       <ion-note
@@ -23,6 +28,7 @@
     <ion-item fill="outline" class="ion-no-padding">
       <ion-label position="floating">Last Name:</ion-label>
       <ion-input
+        placeholder="Enter your last name"
         formControlName="lastName"
         type="text"
         autocomplete="family-name"
@@ -39,6 +45,7 @@
     <ion-item fill="outline" class="ion-no-padding">
       <ion-label position="floating">Email:</ion-label>
       <ion-input
+        placeholder="email@youremail.com"
         formControlName="email"
         type="email"
         autocomplete="email"
@@ -56,6 +63,7 @@
     <ion-item fill="outline" class="ion-no-padding">
       <ion-label position="floating">Phone Number:</ion-label>
       <ion-input
+        placeholder="(+1) 555-333-888"
         formControlName="phone"
         type="tel"
         autocomplete="tel"
