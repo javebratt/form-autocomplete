@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,21 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  public addContact: FormGroup;
+  constructor(public formBuilder: FormBuilder) {
+    this.addContact = formBuilder.group({
+      name: ['', Validators.required],
+      lastName: ['', Validators.required],
+      email: ['', Validators.required],
+      phone: ['', Validators.required],
+    });
+  }
 
-  constructor() {}
-
+  addSong() {
+    if (!this.addContact.valid) {
+      console.log('Nice try!');
+    } else {
+      console.log('Yeah!');
+    }
+  }
 }
