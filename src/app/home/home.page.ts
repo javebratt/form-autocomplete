@@ -17,7 +17,7 @@ export class HomePage {
     });
   }
 
-  addSong() {
+  saveContact() {
     if (!this.addContact.valid) {
       console.log('Nice try!');
     } else {

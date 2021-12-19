@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
-    <ion-title> Form Autocomplete </ion-title>
+    <ion-title> Better Forms </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -10,12 +10,7 @@
   <form [formGroup]="addContact" (submit)="addSong()" novalidate>
     <ion-item fill="outline" class="ion-no-padding">
       <ion-label position="floating">First Name:</ion-label>
-      <ion-input
-        placeholder="Enter your first name"
-        formControlName="name"
-        type="text"
-        autocomplete="given-name"
-      >
+      <ion-input formControlName="name" type="text" autocomplete="given-name">
       </ion-input>
       <ion-note slot="helper">Please enter your first name</ion-note>
       <ion-note
@@ -28,7 +23,6 @@
     <ion-item fill="outline" class="ion-no-padding">
       <ion-label position="floating">Last Name:</ion-label>
       <ion-input
-        placeholder="Enter your last name"
         formControlName="lastName"
         type="text"
         autocomplete="family-name"
@@ -45,7 +39,6 @@
     <ion-item fill="outline" class="ion-no-padding">
       <ion-label position="floating">Email:</ion-label>
       <ion-input
-        placeholder="email@youremail.com"
         formControlName="email"
         type="email"
         autocomplete="email"
@@ -63,19 +56,24 @@
     <ion-item fill="outline" class="ion-no-padding">
       <ion-label position="floating">Phone Number:</ion-label>
       <ion-input
-        placeholder="(+1) 555-333-888"
         formControlName="phone"
         type="tel"
         autocomplete="tel"
         inputmode="tel"
       >
       </ion-input>
-      <ion-note slot="helper">Please enter your Phone Number</ion-note>
+      <ion-note slot="helper"
+        >Add the plus (+) sign before the country code</ion-note
+      >
       <ion-note
         slot="error"
         *ngIf="!addContact.controls.lastName.valid && addContact.controls.lastName.touched"
         >You need to enter a valid phone number.</ion-note
       >
     </ion-item>
+
+    <ion-button type="submit" expand="block" fill="solid"
+      >Save Contact</ion-button
+    >
   </form>
 </ion-content>
