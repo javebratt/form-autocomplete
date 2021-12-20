@@ -7,7 +7,7 @@
 <ion-content class="ion-padding">
   <h2>Add Contact</h2>
 
-  <form [formGroup]="addContact" (submit)="addSong()" novalidate>
+  <form [formGroup]="addContact" (submit)="saveContact()" novalidate>
     <ion-item fill="outline" class="ion-no-padding">
       <ion-label position="floating">First Name:</ion-label>
       <ion-input formControlName="name" type="text" autocomplete="given-name">
